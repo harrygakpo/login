@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login1.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">
+    <title>Login Page | </title>
+</head>
+<body>
+    <div class="body-container">
+    <div class="container" id="container">
+        <div>
+        <div class="form-container sign-up-container">
+            <form action="/signup" method="post">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+                <input type="text" id="fname" name="fname" placeholder="First Name" />
+                <input type="text" id="lname" name="lname" placeholder="Last Name" />
+                <input type="text" id="name" name="name" placeholder="Username" />
+                <input type="email" id="email" name="email" placeholder="Email" />
+                <input type="password" id="pass1" name="pass1" placeholder="Password" />
+                <!-- <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" /> -->
+                
+                <div id="sign-up-button" class="btn-grad" >
+                    <button type="submit"> SignUp</button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/signin" method="post">
+                {% csrf_token %}
+                <!--<a> href = home </a>-->
+                <h1>Sign In</h1>
+                <input type="text" id="Name" name="Name" placeholder="Username" />
+                <input type="password" id="pass1" name="pass1" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <div id="sign-in-button" class="btn-grad" >
+                    <button type="submit">SignIn</button>
+                </div>
+            </form>
+        </div>
+        </div>
+
+        <div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>
+                        Start from where you left
+                    </p>
+                    <div class="btn-grad" id="signIn">Sign In</div>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Buddy!</h1>
+                    <p>Join Us on a new adventure</p>
+                    <div class="btn-grad" id="signUp">Sign Up</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="{% static 'javascript/login1.js' %}"></script>
+</body>
+</html>

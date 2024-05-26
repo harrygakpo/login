@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CheckOut Page</title>
+  <link rel="stylesheet" href="{% static 'css//check_style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="mainscreen">
+    <!-- <img src="https://image.freepik.com/free-vector/purple-background-with-neon-frame_52683-34124.jpg"  class="bgimg " alt="">--> 
+      <div class="card">
+        <div class="leftside">
+          <img
+            src="https://i.pinimg.com/originals/18/9d/dc/189ddc1221d9c1c779dda4ad37a35fa1.png"
+            class="product"
+            alt="Shoes"
+          />
+        </div>
+        <div class="rightside">
+          <form action="" method="post">
+          {% csrf_token %}
+            <h1>CheckOut</h1>
+            <h2>Payment Information</h2>
+            
+            <label for=""><p>Cardholder Name</p></label>
+            <input type="text" class="inputbox" name="name" required />
+            
+            <label for=""><p>Card Number</p></label>
+            <input type="number" class="inputbox" name="card_number" id="card_number" required />
+
+            <p>Card Type</p>
+            <select class="inputbox" name="card_type" id="card_type" required>
+              <option value="">--Select a Card Type--</option>
+              <option value="Visa">Visa</option>
+              <option value="Paypal">Paypal</option>
+              <option value="MasterCard">MasterCard</option>
+            </select>
+<div class="expcvv">
+
+            
+            <label for=""><p class="expcvv_text">Expiry</p></label>
+            <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+
+            
+            <label for=""><p class="expcvv_text2">CVV</p></label>
+            <input type="password" class="inputbox" name="cvv" id="cvv" required />
+        </div>
+            <p></p>
+            <button type="submit" class="button">CheckOut</button>
+          </form>
+        </div>
+      </div>
+    </div>
+<!-- partial -->
+  
+</body>
+</html>
